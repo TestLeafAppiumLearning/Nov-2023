@@ -11,12 +11,12 @@ import java.time.Duration;
 public class AndroidFirstCodeToIdentifyRightAppPackageAndAppActivity {
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
         DesiredCapabilities dc = new DesiredCapabilities();
-        dc.setCapability("platformName","Android");
-        dc.setCapability("appium:deviceName","dg");
-        dc.setCapability("appium:automationName","UiAutomator2");
-        dc.setCapability("appium:app",System.getProperty("user.dir")+"/apks/amazon.apk");
-//        dc.setCapability("appPackage","com.testleaf.leaforg");
-//        dc.setCapability("appActivity","com.testleaf.leaforg.MainActivity");
+        dc.setCapability("platformName", "Android");
+        dc.setCapability("appium:deviceName", "my emulator");
+        dc.setCapability("appium:automationName", "UiAutomator2");
+        dc.setCapability("appium:appPackage", "com.amazon.mShop.android.shopping");
+        dc.setCapability("appium:appActivity", "com.amazon.mShop.home.HomeActivity");
+        dc.setCapability("noReset",true);
         AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"),dc);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
