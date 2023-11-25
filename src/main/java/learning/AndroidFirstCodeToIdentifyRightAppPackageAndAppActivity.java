@@ -15,8 +15,8 @@ public class AndroidFirstCodeToIdentifyRightAppPackageAndAppActivity {
         dc.setCapability("appium:deviceName", "my emulator");
         dc.setCapability("appium:automationName", "UiAutomator2");
         dc.setCapability("appium:appPackage", "com.amazon.mShop.android.shopping");
-        dc.setCapability("appium:appActivity", "com.amazon.mShop.home.HomeActivity");
-        dc.setCapability("noReset",true);
+        dc.setCapability("appium:appActivity", "com.amazon.mShop.android.home.HomeActivity");
+        //dc.setCapability("noReset",true);
         AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"),dc);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
