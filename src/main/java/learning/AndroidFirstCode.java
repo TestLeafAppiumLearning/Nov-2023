@@ -11,11 +11,11 @@ import java.time.Duration;
 public class AndroidFirstCode {
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
         DesiredCapabilities dc = new DesiredCapabilities();
-        dc.setCapability("platformName","Android");
-        dc.setCapability("appium:deviceName","dg");
-        dc.setCapability("appium:automationName","UiAutomator2");
-        dc.setCapability("appium:app",System.getProperty("user.dir")+"/apks/leaforg.apk");
-        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"),dc);
+        dc.setCapability("platformName", "Android");
+        dc.setCapability("appium:deviceName", "dg");
+        dc.setCapability("appium:automationName", "UiAutomator2");
+        dc.setCapability("appium:app", System.getProperty("user.dir") + "/apks/leaforg.apk");
+        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), dc);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.findElement(AppiumBy.className("android.widget.EditText")).sendKeys("rajkumar@testleaf.com");
         driver.findElement(AppiumBy.xpath("(//android.widget.EditText)[2]")).sendKeys("Leaf@123");

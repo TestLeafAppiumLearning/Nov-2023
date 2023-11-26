@@ -28,11 +28,11 @@ public class LearnPointerInput {
         startY = (int) (maxY * 0.8);
         endX = (int) (maxX * 0.5);
         endY = (int) (maxY * 0.2);
-        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence swipeUp = new Sequence(input,1);
-        swipeUp.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipeUp = new Sequence(input, 1);
+        swipeUp.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         swipeUp.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipeUp.addAction(input.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(),endX, endY));
+        swipeUp.addAction(input.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(), endX, endY));
         swipeUp.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Collections.singletonList(swipeUp));
         //Swipe down
@@ -40,11 +40,11 @@ public class LearnPointerInput {
         startY = (int) (maxY * 0.2);
         endX = (int) (maxX * 0.5);
         endY = (int) (maxY * 0.8);
-        PointerInput input1 = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence swipeDown = new Sequence(input1,1);
-        swipeDown.addAction(input1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input1 = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipeDown = new Sequence(input1, 1);
+        swipeDown.addAction(input1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         swipeDown.addAction(input1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipeDown.addAction(input1.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(),endX, endY));
+        swipeDown.addAction(input1.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(), endX, endY));
         swipeDown.addAction(input1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Collections.singletonList(swipeDown));
         //Swipe left
@@ -52,11 +52,11 @@ public class LearnPointerInput {
         startY = (int) (maxY * 0.5);
         endX = (int) (maxX * 0.2);
         endY = (int) (maxY * 0.5);
-        PointerInput input2 = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence swipeLeft = new Sequence(input2,1);
-        swipeLeft.addAction(input2.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input2 = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipeLeft = new Sequence(input2, 1);
+        swipeLeft.addAction(input2.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         swipeLeft.addAction(input2.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipeLeft.addAction(input2.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(),endX, endY));
+        swipeLeft.addAction(input2.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(), endX, endY));
         swipeLeft.addAction(input2.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Collections.singletonList(swipeLeft));
         //Swipe right
@@ -64,11 +64,11 @@ public class LearnPointerInput {
         startY = (int) (maxY * 0.5);
         endX = (int) (maxX * 0.8);
         endY = (int) (maxY * 0.5);
-        PointerInput input3 = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence swipeRight = new Sequence(input3,1);
-        swipeRight.addAction(input3.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input3 = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipeRight = new Sequence(input3, 1);
+        swipeRight.addAction(input3.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         swipeRight.addAction(input3.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipeRight.addAction(input3.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(),endX, endY));
+        swipeRight.addAction(input3.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(), endX, endY));
         swipeRight.addAction(input3.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Collections.singletonList(swipeRight));
         driver.quit();

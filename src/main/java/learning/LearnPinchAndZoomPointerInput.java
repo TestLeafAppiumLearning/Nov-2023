@@ -9,7 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class LearnPinchAndZoomPointerInput {
     public static void main(String[] args) throws MalformedURLException {
@@ -29,48 +28,48 @@ public class LearnPinchAndZoomPointerInput {
         startY = (int) (maxY * 0.25);
         endX = (int) (maxX * 0.5);
         endY = (int) (maxY * 0.5);
-        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence finger1 = new Sequence(input,1);
-        finger1.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence finger1 = new Sequence(input, 1);
+        finger1.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         finger1.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        finger1.addAction(input.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(),endX, endY));
+        finger1.addAction(input.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(), endX, endY));
         finger1.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         //driver.perform(Collections.singletonList(finger3));
         startX = (int) (maxX * 0.25);
         startY = (int) (maxY * 0.75);
         endX = (int) (maxX * 0.5);
         endY = (int) (maxY * 0.5);
-        PointerInput input1 = new PointerInput(PointerInput.Kind.TOUCH,"finger4");
-        Sequence finger2 = new Sequence(input1,1);
-        finger2.addAction(input1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input1 = new PointerInput(PointerInput.Kind.TOUCH, "finger4");
+        Sequence finger2 = new Sequence(input1, 1);
+        finger2.addAction(input1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         finger2.addAction(input1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        finger2.addAction(input1.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(),endX, endY));
+        finger2.addAction(input1.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(), endX, endY));
         finger2.addAction(input1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        driver.perform(Arrays.asList(finger1,finger2));
+        driver.perform(Arrays.asList(finger1, finger2));
 
         //Zoom
         startX = (int) (maxX * 0.5);
         startY = (int) (maxY * 0.5);
         endX = (int) (maxX * 0.75);
         endY = (int) (maxY * 0.25);
-        PointerInput input2 = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence finger3 = new Sequence(input2,1);
-        finger3.addAction(input2.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input2 = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence finger3 = new Sequence(input2, 1);
+        finger3.addAction(input2.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         finger3.addAction(input2.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        finger3.addAction(input2.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(),endX, endY));
+        finger3.addAction(input2.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(), endX, endY));
         finger3.addAction(input2.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         //driver.perform(Collections.singletonList(finger3));
         startX = (int) (maxX * 0.5);
         startY = (int) (maxY * 0.5);
         endX = (int) (maxX * 0.25);
         endY = (int) (maxY * 0.75);
-        PointerInput input3 = new PointerInput(PointerInput.Kind.TOUCH,"finger4");
-        Sequence finger4 = new Sequence(input3,1);
-        finger4.addAction(input3.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        PointerInput input3 = new PointerInput(PointerInput.Kind.TOUCH, "finger4");
+        Sequence finger4 = new Sequence(input3, 1);
+        finger4.addAction(input3.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         finger4.addAction(input3.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        finger4.addAction(input3.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(),endX, endY));
+        finger4.addAction(input3.createPointerMove(Duration.ofMillis(600), PointerInput.Origin.viewport(), endX, endY));
         finger4.addAction(input3.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-        driver.perform(Arrays.asList(finger3,finger4));
+        driver.perform(Arrays.asList(finger3, finger4));
         driver.quit();
     }
 }

@@ -1,6 +1,5 @@
 package learning;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -17,7 +16,7 @@ public class AndroidFirstCodeToIdentifyRightAppPackageAndAppActivity {
         dc.setCapability("appium:appPackage", "com.amazon.mShop.android.shopping");
         dc.setCapability("appium:appActivity", "com.amazon.mShop.android.home.HomeActivity");
         //dc.setCapability("noReset",true);
-        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"),dc);
+        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), dc);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
         Thread.sleep(5000);

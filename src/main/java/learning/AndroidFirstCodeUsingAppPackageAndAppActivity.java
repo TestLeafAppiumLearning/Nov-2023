@@ -12,13 +12,13 @@ public class AndroidFirstCodeUsingAppPackageAndAppActivity {
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
         //TODO: Application should be already installed in the device
         DesiredCapabilities dc = new DesiredCapabilities();
-        dc.setCapability("platformName","Android");
-        dc.setCapability("appium:deviceName","dg");
-        dc.setCapability("appium:automationName","UiAutomator2");
+        dc.setCapability("platformName", "Android");
+        dc.setCapability("appium:deviceName", "dg");
+        dc.setCapability("appium:automationName", "UiAutomator2");
 //        dc.setCapability("appium:app",System.getProperty("user.dir")+"/apks/leaforg.apk");
-        dc.setCapability("appPackage","com.testleaf.leaforg");
-        dc.setCapability("appActivity","com.testleaf.leaforg.MainActivity");
-        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"),dc);
+        dc.setCapability("appPackage", "com.testleaf.leaforg");
+        dc.setCapability("appActivity", "com.testleaf.leaforg.MainActivity");
+        AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723"), dc);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.findElement(AppiumBy.className("android.widget.EditText")).sendKeys("rajkumar@testleaf.com");
         driver.findElement(AppiumBy.xpath("(//android.widget.EditText)[2]")).sendKeys("Leaf@123");

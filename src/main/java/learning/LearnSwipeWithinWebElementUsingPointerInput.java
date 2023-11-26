@@ -2,7 +2,6 @@ package learning;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -32,21 +31,21 @@ public class LearnSwipeWithinWebElementUsingPointerInput {
 //        int eleStartY = ele.getLocation().getY();
 //        int eleWidth = ele.getSize().getWidth();
 //        int eleHeight = ele.getSize().getHeight();
-        int eleStartX= ele.getRect().getX();
+        int eleStartX = ele.getRect().getX();
         int eleStartY = ele.getRect().getY();
         int eleWidth = ele.getRect().getWidth();
         int eleHeight = ele.getRect().getHeight();
         int startX = 0, startY = 0, endX = 0, endY = 0;
         //Swipe left
-        startX = (int) (eleStartX +(eleWidth*0.8));
-        startY = (int) (eleStartY + (eleHeight *0.5));
-        endX = (int) (eleStartX +(eleWidth*0.2));
-        endY = (int) (eleStartY + (eleHeight *0.5));
-        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH,"finger");
-        Sequence swipeleftWithinEle = new Sequence(input,1);
-        swipeleftWithinEle.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),startX, startY));
+        startX = (int) (eleStartX + (eleWidth * 0.8));
+        startY = (int) (eleStartY + (eleHeight * 0.5));
+        endX = (int) (eleStartX + (eleWidth * 0.2));
+        endY = (int) (eleStartY + (eleHeight * 0.5));
+        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipeleftWithinEle = new Sequence(input, 1);
+        swipeleftWithinEle.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY));
         swipeleftWithinEle.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipeleftWithinEle.addAction(input.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(),endX, endY));
+        swipeleftWithinEle.addAction(input.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(), endX, endY));
         swipeleftWithinEle.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Collections.singletonList(swipeleftWithinEle));
         driver.quit();
