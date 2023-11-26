@@ -6,7 +6,7 @@ import wrappers.GenericWrappers;
 public class LearnAndroidWrappers extends GenericWrappers {
     @Test
     public void runCode() {
-        launchAndroidApp("df","","","UiAutomator2","/apks/leaforg.apk");
+        launchAndroidApp("df", "", "", "UiAutomator2", "/apks/leaforg.apk");
         sleep(5000);
         showNotificationMenu();
         sleep(2000);

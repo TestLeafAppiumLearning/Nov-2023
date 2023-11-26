@@ -75,7 +75,7 @@ public class CommonNativeWrappers {
             dc.setCapability("deviceName", deviceName);
             // Comment the below line based on need
             dc.setCapability("noReset", true);
-            dc.setCapability("forceAppLaunch",true);
+            dc.setCapability("forceAppLaunch", true);
             if (platformName.equalsIgnoreCase("Android")) {
                 // Comment the below line based on need
                 dc.setCapability("autoGrantPermissions", true);
