@@ -24,15 +24,18 @@ Simple Maven Project
 src/main/java
 	wrappers
 		GenericWrappers.java extends AbstractTestNGCucumberTests
-			public AppiumDriver driver;
-			public void launchApp(....
+			//public static AppiumDriver driver;
+			public static ThreadLocal<AppiumDriver> driver = new ThreadLocal<AppiumDriver>();
+
+			public void launchApp(){
+			driver.set(new AndroidDriver(......));
+			}
 			public void clickEle(...
 			public void enterValue(....
 			
 	pages
 		LoginPage.java extends GenericWrappers
-			public LoginPage(AppiumDriver driver) {
-			this.driver = driver;
+			public LoginPage() {
 			//Verify the unique visibility of an element
 			}
 			@Given("I enter the username as {string}")
@@ -52,8 +55,7 @@ src/main/java
 			}
 
 		HomePage.java extends GenericWrappers
-			public HomePage(AppiumDriver driver) {
-			this.driver = driver;
+			public HomePage() {
 			//Verify the unique visibility of an element
 			}
 			@Given("Verify Home Page is displayed")
@@ -85,7 +87,6 @@ src/test/resources
 		<Gherkin Keyword> <Step Keywords>
 		
 		Scenario: Login to the app		
-		Given The app is launched
 		When I enter the username as "aaa"
 		And I enter the password as "bbb"
 		And I click the login button
