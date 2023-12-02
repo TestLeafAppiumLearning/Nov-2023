@@ -1,0 +1,101 @@
+Page Object Model 
+
+Rules of POM
+1. Verify the page it has been landed in constructor (done)
+2. Every action should be a separate method (done)
+3. Every page should be a separate class (done)
+4. Every method should have a return type and return to the page it lands post method completion (done)
+5. Every page should extend a reusable method class (done)
+
+Maven
+
+src/main/java --> Files / script that help to run my TC's
+src/main/resources --> Files that support the execution of files in src/main/java
+src/test/java --> Test cases
+src/test/resources --> Test data that support the execution of files in src/test/java
+
+Simple Maven Project
+
+src/main/java
+	wrappers
+		GenericWrappers.java
+			public static AppiumDriver driver;
+			public void launchApp(....
+			public void clickEle(...
+			public void enterValue(....
+	pages
+		LoginPage.java extends GenericWrappers
+			public LoginPage() {
+			//Verify the unique visibility of an element
+			}
+			public LoginPage enterUN() {
+				return this;
+			}
+			public LoginPage enterPWD() {
+				return this;
+			}
+			public LoginPage clickLoginBtnForFailure() {
+				return this;
+			}
+			public HomePage clickLoginBtn() {
+				return new HomePage();
+			}
+
+		HomePage.java extends GenericWrappers
+			public HomePage() {
+			//Verify the unique visibility of an element
+			}
+			public void clickMenu(....
+
+src/main/resources
+src/test/java
+	testCases
+		TC001.java
+			public static void main(String[] args)
+			{
+			GenericWrappers gw = new GenericWrappers();
+			gw.launchApp(.......
+			LoginPage lp = new LoginPage();
+			lp.enterUN();
+			lp.enterPwd();
+			lp.clickLogin();
+			HomePage hp = new HomePage();
+			hp.clickMenu();
+			}
+		TC002.java
+			public static void main(String[] args)
+			{
+			new GenericWrappers().launchApp(.......
+			new LoginPage().enterUN();
+			new LoginPage().enterPwd();
+			new LoginPage().clickLogin();
+			new HomePage().clickMenu();
+			}
+		TC003.java
+			public static void main(String[] args)
+			{
+			new GenericWrappers().launchApp(.......
+			new LoginPage()
+				.enterUN()
+				.enterPwd()
+				.clickLogin()
+				.clickMenu();
+			}
+src/test/resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+Manual testing
+Suite
+	Scenarios
+		Test cases
+			Test Steps
+			
+TestNG
+Suite
+	Test
+		Class
+			Method
+
+Cucumber
+Project
+	Feature
+		Scenario
+			Steps
+
+Gherkin Keywords
+Given --> Pre condition
+When --> Action/steps to be perform
+Then --> Expected result
+And --> supporting keyword for all
+But --> Expected result for negative cases
+* --> Wild Card (Any) --> Rather not to say
+
+Cucumber
+1. Feature File Ready
+2. Step Definition
+3. Add the Automation code for the step def
+
+Maven
+
+src/main/java --> Files / script that help to run my TC's
+src/main/resources --> Files that support the execution of files in src/main/java
+src/test/java --> Test cases
+src/test/resources --> Test data that support the execution of files in src/test/java
+
+Simple Maven Project
+src/main/java 
+	stepDef
+		StepDef.java
+			AppiumDriver driver;
+			@Given("The app is launched")
+			public void a() {
+			dc..
+			driver = new AndroidDriver(....
+			}
+			@Given("I enter the username as {string}")
+			public void b(String a) {
+			driver.findEl(.....).sendKeys(a);
+			}
+			@Given("I enter the password as {string}")
+			public void c(String a) {
+			driver.findEl(.....).sendKeys(a);
+			}
+			@Given("I click the login button")
+			public void d() {
+			driver.findEl(.....).click();
+			}
+			@Given("Verify Home Page is displayed")
+			public void e() {
+			driver.findEl(.....).isDisplayed();
+			}
+
+src/main/resources
+src/test/java
+	runner
+		TestRunner.java
+			@CucumberOptions(feature={"src/test/resources/features"},
+			glue={"stepDef"})
+			public class TestRunner extends AbstractTestNGCucumberTests{
+			}
+src/test/resources
+	features
+		Login.feature	
+		Feature: <Name of Scenario>
+		Scenario: <Test case Name>
+		<Gherkin Keyword> <Step Keywords>
+		<Gherkin Keyword> <Step Keywords>
+		<Gherkin Keyword> <Step Keywords>
+		
+		Scenario: Login to the app		
+		Given The app is launched
+		When I enter the username as "aaa"
+		And I enter the password as "bbb"
+		And I click the login button
+		Then Verify Home Page is displayed
+		
+
+
+		

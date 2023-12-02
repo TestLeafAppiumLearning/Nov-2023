@@ -1,0 +1,98 @@
+Page Object Model 
+
+Rules of POM
+1. Verify the page it has been landed in constructor (done)
+2. Every action should be a separate method (done)
+3. Every page should be a separate class (done)
+4. Every method should have a return type and return to the page it lands post method completion (done)
+5. Every page should extend a reusable method class (done)
+
+Cucumber
+1. Feature File Ready
+2. Step Definition
+3. Add the Automation code for the step def
+
+Maven
+
+src/main/java --> Files / script that help to run my TC's
+src/main/resources --> Files that support the execution of files in src/main/java
+src/test/java --> Test cases
+src/test/resources --> Test data that support the execution of files in src/test/java
+
+Simple Maven Project
+
+src/main/java
+	wrappers
+		GenericWrappers.java extends AbstractTestNGCucumberTests
+			public AppiumDriver driver;
+			public void launchApp(....
+			public void clickEle(...
+			public void enterValue(....
+			
+	pages
+		LoginPage.java extends GenericWrappers
+			public LoginPage(AppiumDriver driver) {
+			this.driver = driver;
+			//Verify the unique visibility of an element
+			}
+			@Given("I enter the username as {string}")
+			public LoginPage enterUN() {
+				return this;
+			}
+			@Given("I enter the password as {string}")
+			public LoginPage enterPWD() {
+				return this;
+			}
+			public LoginPage clickLoginBtnForFailure() {
+				return this;
+			}
+			@Given("I click the login button")
+			public HomePage clickLoginBtn() {
+				return new HomePage();
+			}
+
+		HomePage.java extends GenericWrappers
+			public HomePage(AppiumDriver driver) {
+			this.driver = driver;
+			//Verify the unique visibility of an element
+			}
+			@Given("Verify Home Page is displayed")
+			public void clickMenu(....
+
+src/main/resources
+src/test/java
+	runner
+		TestRunner.java
+			@CucumberOptions(feature={"src/test/resources/features"},
+			glue={"pages"})
+			public class TestRunner extends GenericWrappers{
+			@BeforeMethod
+			public void bm() {
+			launchApp(.......
+			}
+			@AfterMethod
+			public void close()
+			{
+			closeApp();
+			}
+src/test/resources
+	features
+		Login.feature	
+		Feature: <Name of Scenario>
+		Scenario: <Test case Name>
+		<Gherkin Keyword> <Step Keywords>
+		<Gherkin Keyword> <Step Keywords>
+		<Gherkin Keyword> <Step Keywords>
+		
+		Scenario: Login to the app		
+		Given The app is launched
+		When I enter the username as "aaa"
+		And I enter the password as "bbb"
+		And I click the login button
+		Then Verify Home Page is displayed
+		
+
+
+
+
+
