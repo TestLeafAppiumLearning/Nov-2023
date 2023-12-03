@@ -1,20 +1,25 @@
 Mandatory desired capabilities in Android
 
-Native app --> Just create session
+Just create session with a device
 1. platformName --> Android
 2. automationName --> UiAutomator2
 3. deviceName --> Any data
 
-Native app --> Create session, Install app and launch the app
+Native/Hybrid app --> Create session, Install app and launch the app
 1. platformName --> Android
 2. automationName --> UiAutomator2
 3. deviceName --> Any data
 4. app --> Path of your APK file
 
-Native app --> Create session and launch the app that is already installed
+Native/Hybrid app --> Create session and launch the app that is already installed
 1. platformName --> Android
 2. automationName --> UiAutomator2
 3. deviceName --> Any data
 4. appPackage --> Package name of the app
 5. appActivity --> Screen / Activity that needs to be launched
 
+Web app --> Create session and launch the browser app
+1. platformName --> Android
+2. automationName --> UiAutomator2
+3. deviceName --> Any data
+4. browserName --> Chrome / Chromium
