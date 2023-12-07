@@ -1,0 +1,28 @@
+Mandatory desired capabilities in iOS
+
+Just create session with a iOS device
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. deviceName --> Any data only if UDID is passed (or) pass the exact match of my device name
+4. udid --> exact udid only if device name id not valid (takes priority over deviceName)
+
+Native/Hybrid app --> Create session, Install app and launch the app
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. deviceName --> Any data only if UDID is passed (or) pass the exact match of my device name
+4. udid --> exact udid only if device name id not valid (takes priority over deviceName)
+5. app --> Path of your app/ipa/zip file
+
+Native/Hybrid app --> Create session and launch the app that is already installed
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. deviceName --> Any data only if UDID is passed (or) pass the exact match of my device name
+4. udid --> exact udid only if device name id not valid (takes priority over deviceName)
+5. bundleId --> app bundle id of the app that needs to be launched
+
+Web app --> Create session and launch the browser app
+1. platformName --> iOS
+2. automationName --> XCUITest
+3. deviceName --> Any data only if UDID is passed (or) pass the exact match of my device name
+4. udid --> exact udid only if device name id not valid (takes priority over deviceName)
+5. browserName --> Safari
