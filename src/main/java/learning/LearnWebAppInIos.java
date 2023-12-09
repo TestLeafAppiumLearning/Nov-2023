@@ -14,5 +14,6 @@ public class LearnWebAppInIos extends GenericWrappers {
 //        click(getWebElement(Locators.ACCESSIBILITY_ID.asString(), "Search"));
 //        switchWebView();
         clickGivenKeyboardButtonInIosByAccessibilityId("Search");
+        closeApp();
     }
 }
